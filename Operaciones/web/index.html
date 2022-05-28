@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+
+    <head>
+       
+        <title>JSP Page</title>
+
+    </head>
+
+    <body>
+
+       <%  double n1=0, n2=0, r=0;
+
+           int valor;
+
+                        if(request.getParameter("ok")!=null){
+
+                            n1=Double.parseDouble(request.getParameter("txtnum1"));
+
+                            n2=Double.parseDouble(request.getParameter("txtnum2"));
+
+                            valor=Integer.parseInt(request.getParameter("operaciones"));
+
+                            if(valor==1){
+
+                            r=n1+n2;
+
+                            }else if(valor==2){
+
+                            r=n1-n2;
+
+                            } else if(valor==3){
+
+                            r=n1*n2;
+
+                            } else if(valor==4){
+
+                            r=n1/n2; 
+
+                            }
+
+                        }
+
+                            out.print("<form action=index.jsp method=POST>");
+
+                            out.print("<table border=0>");
+
+                            out.print ("<tr>");
+
+                            out.print ("<td>");
+
+                            out.print("Primer Valor : <input type=text name=txtnum1 value="+n1+">");
+
+                            out.print ("</td>");                           
+
+                            out.print ("<td>");
+
+                            out.print("<select name= operaciones>");
+
+                            out.print("<option value=1> Suma ");
+
+                            out.print("<option value=2> resta ");
+
+                            out.print("<option value=3> multiplicacion ");
+
+                            out.print("<option value=4> division ");
+
+                            out.print("<br>");
+
+                            out.print ("</td>");
+
+                            out.print ("</tr>");
+
+                            out.print("<tr>");
+
+                            out.print ("<td>");
+
+                            out.print("Segundo Valor : <input type=text name=txtnum2 value="+n2+">");
+
+                            out.print ("</td>");
+
+                            out.print ("<td>");
+
+                            out.print("<input type=submit name= ok value=Calcular> <br>");
+
+                            out.print ("</td>");
+
+                            out.print("</tr>");
+
+                            out.print ("<tr>");                           
+
+                            out.print ("<td>");
+
+                            out.print("Resultado: <input type=text name=index value="+r+">");
+
+                            out.print ("</td>");
+
+                            out.print ("</table>");                                                                                                                                                                                                                 
+
+                            out.print("</form>");
+                     
+                        %> 
+    </body>
+
+</html>
